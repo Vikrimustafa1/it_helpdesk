@@ -44,8 +44,7 @@ class UserManagementController extends Controller
             'unit'          => ['nullable', 'string', 'max:255'],
             'department_id' => ['nullable', 'exists:departments,id'],
             'phone'         => ['nullable', 'string', 'max:50'],
-            'password'      => ['required', 'string', 'confirmed',
-                                Password::min(8)->letters()->numbers()],
+            'password'      => ['required', 'string', 'min:6', 'confirmed'],
         ]);
 
         User::create([
@@ -86,8 +85,7 @@ class UserManagementController extends Controller
             'unit'          => ['nullable', 'string', 'max:255'],
             'department_id' => ['nullable', 'exists:departments,id'],
             'phone'         => ['nullable', 'string', 'max:50'],
-            'password'      => ['nullable', 'string', 'confirmed',
-                                Password::min(8)->letters()->numbers()],
+            'password'      => ['nullable', 'string', 'min:6', 'confirmed'],
         ];
         if ($isAdmin) {
             $rules['role'] = $roleRules;
