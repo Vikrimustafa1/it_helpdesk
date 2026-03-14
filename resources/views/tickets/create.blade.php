@@ -500,7 +500,7 @@ const tplTable  = document.getElementById('tplTable');
 const modalEl   = document.getElementById('templateModal');
 const tplModal  = modalEl ? new bootstrap.Modal(modalEl) : null;
 
-const badgeMap = { Hardware: 'primary', Software: 'purple' };
+const badgeColors = { Hardware: '#3b82f6', Software: '#8b5cf6' };
 
 function pilihTemplate(masalah, kategori) {
     deskripsiTextarea.value = masalah;
@@ -527,8 +527,9 @@ function renderTable() {
         const hotTag = t.sumber === 'db'
             ? '<span class="badge bg-danger bg-opacity-10 text-danger ms-1" style="font-size:.65rem;"><i class="bi bi-fire"></i> ' + t.total + '×</span>'
             : '';
+        const badgeColor = badgeColors[t.kategori] || '#64748b';
         tr.innerHTML =
-            '<td><span class="badge bg-' + (badgeMap[t.kategori] || 'secondary') + '">' + t.kategori + '</span></td>' +
+            '<td><span class="badge" style="background:' + badgeColor + ';">' + t.kategori + '</span></td>' +
             '<td style="font-size:.875rem;">' + t.masalah + hotTag + '</td>' +
             '<td class="text-end"><button type="button" class="btn btn-sm btn-primary py-0 px-2" style="font-size:.75rem;">Pakai</button></td>';
         tr.addEventListener('click', () => pilihTemplate(t.masalah, t.kategori));
