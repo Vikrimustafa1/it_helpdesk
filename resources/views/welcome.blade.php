@@ -287,6 +287,9 @@ footer { background: rgba(0,0,0,.3); border-top: 1px solid rgba(255,255,255,.06)
 @media (max-width: 768px) {
     .hero { padding: 5rem 0 3rem; }
     .hero h1 { font-size: 2rem; }
+    .stat-pill { padding: .75rem .5rem; }
+    .stat-num { font-size: 1.2rem; }
+    .stat-lbl { font-size: .65rem; }
 }
 </style>
 </head>
