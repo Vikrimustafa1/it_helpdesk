@@ -459,7 +459,24 @@ html.dark .feedback-form-card .star-btn {
             $canHandle       = $isTekniksi && ($allowedKategori === null || $ticket->kategori === $allowedKategori);
         @endphp
         @if($canHandle && $ticket->status !== 'Closed' && ($ticket->handled_by === null || $ticket->handled_by === auth()->id()))
-        <div class="card shadow-sm">
+        @if($isTekniksi && $ticket->handled_by === auth()->id() && $ticket->status === 'Diproses')
+        <div class="rounded-3 p-3 mb-3 d-flex align-items-center justify-content-between flex-wrap gap-2"
+             style="background:linear-gradient(135deg,#f0fdf4,#dcfce7);border:1.5px solid #86efac;">
+            <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-check2-circle text-success fs-4"></i>
+                <div>
+                    <div class="fw-bold text-success" style="font-size:.9rem;">Masalah sudah selesai ditangani?</div>
+                    <div class="text-muted" style="font-size:.78rem;">Ubah status tiket ke <strong>Selesai</strong> agar pelapor dapat memberikan feedback.</div>
+                </div>
+            </div>
+            <a href="{{ route('tickets.edit', $ticket->id) }}"
+               class="btn btn-success btn-sm fw-semibold flex-shrink-0">
+                <i class="bi bi-pencil-square me-1"></i>Ubah Status Tiket
+            </a>
+        </div>
+        @endif
+
+        <div class="card shadow-sm" id="progress">
             <div class="card-header d-flex align-items-center gap-2">
                 <i class="bi bi-plus-circle text-success"></i>
                 <span class="fw-semibold">Tambah Catatan Progress</span>

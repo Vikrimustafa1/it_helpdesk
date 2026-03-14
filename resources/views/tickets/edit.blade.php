@@ -435,9 +435,14 @@ html.dark .banner-info .banner-desc { color: #93c5fd !important; }
 
             <div class="card shadow-sm">
                 <div class="card-body">
-                    <div class="d-flex gap-2 justify-content-end">
+                    <div class="d-flex flex-wrap gap-2 justify-content-end">
                         <a href="{{ route('tickets.show', $ticket->id) }}" class="btn btn-outline-secondary">
                             <i class="bi bi-arrow-left me-1"></i>{{ $isLocked ? 'Kembali ke Detail' : 'Batal' }}
+                        </a>
+                        {{-- Shortcut langsung ke halaman progress --}}
+                        <a href="{{ route('tickets.show', $ticket->id) }}#progress"
+                           class="btn btn-outline-success fw-semibold">
+                            <i class="bi bi-chat-left-text me-1"></i>Tambah Progress
                         </a>
                         @if(!$isLocked)
                         <button type="submit" class="btn btn-primary px-4 fw-semibold">

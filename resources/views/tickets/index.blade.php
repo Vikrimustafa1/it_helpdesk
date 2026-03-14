@@ -24,7 +24,7 @@
                     <label for="kategori" class="form-label">Kategori</label>
                     <select name="kategori" id="kategori" class="form-select">
                         <option value="">Semua</option>
-                        @foreach(['Hardware', 'Jaringan', 'SIMRS'] as $kat)
+                        @foreach(['Hardware', 'Software'] as $kat)
                             <option value="{{ $kat }}" {{ ($filters['kategori'] ?? '') === $kat ? 'selected' : '' }}>{{ $kat }}</option>
                         @endforeach
                     </select>
