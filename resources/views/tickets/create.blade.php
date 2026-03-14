@@ -450,32 +450,32 @@ const STATIC_TEMPLATES = [
     { kategori: 'Hardware', masalah: 'UPS / stabilizer berbunyi alarm terus-menerus.' },
     { kategori: 'Hardware', masalah: 'Headset / speaker tidak berfungsi, tidak ada suara.' },
     { kategori: 'Hardware', masalah: 'Barcode scanner tidak terbaca oleh sistem.' },
-    // Jaringan
-    { kategori: 'Jaringan', masalah: 'Tidak bisa terhubung ke internet sama sekali.' },
-    { kategori: 'Jaringan', masalah: 'Koneksi internet sangat lambat (speedtest jauh di bawah normal).' },
-    { kategori: 'Jaringan', masalah: 'Koneksi WiFi sering putus-putus / disconnect sendiri.' },
-    { kategori: 'Jaringan', masalah: 'Kabel LAN sudah terpasang tapi tidak terdeteksi (limited / no connectivity).' },
-    { kategori: 'Jaringan', masalah: 'Tidak bisa mengakses server internal / shared folder.' },
-    { kategori: 'Jaringan', masalah: 'Tidak bisa mengakses SIMRS melalui jaringan lokal.' },
-    { kategori: 'Jaringan', masalah: 'IP address konflik dengan perangkat lain di jaringan.' },
-    { kategori: 'Jaringan', masalah: 'Port switch / panel jaringan di ruangan tidak berfungsi.' },
-    { kategori: 'Jaringan', masalah: 'Tidak bisa terhubung ke WiFi rumah sakit.' },
-    { kategori: 'Jaringan', masalah: 'Akses ke website / aplikasi tertentu diblokir / tidak bisa dibuka.' },
-    { kategori: 'Jaringan', masalah: 'VPN tidak bisa tersambung atau sering terputus.' },
-    { kategori: 'Jaringan', masalah: 'Printer jaringan (network printer) tidak terdeteksi oleh komputer.' },
-    // SIMRS
-    { kategori: 'SIMRS', masalah: 'Tidak bisa login ke aplikasi SIMRS (akun / password ditolak).' },
-    { kategori: 'SIMRS', masalah: 'Akun SIMRS terkunci setelah beberapa kali salah password.' },
-    { kategori: 'SIMRS', masalah: 'Data pasien / transaksi tidak tersimpan setelah klik Simpan.' },
-    { kategori: 'SIMRS', masalah: 'Aplikasi SIMRS error / crash / keluar sendiri saat digunakan.' },
-    { kategori: 'SIMRS', masalah: 'Laporan / rekap tidak bisa dicetak dari SIMRS.' },
-    { kategori: 'SIMRS', masalah: 'Tampilan SIMRS berantakan / tidak tampil dengan benar di browser.' },
-    { kategori: 'SIMRS', masalah: 'Fitur atau menu tertentu di SIMRS tidak muncul / tidak bisa diklik.' },
-    { kategori: 'SIMRS', masalah: 'Data pasien tidak ditemukan meskipun nomor rekam medis benar.' },
-    { kategori: 'SIMRS', masalah: 'Resep / tagihan tidak bisa diproses di modul farmasi / kasir.' },
-    { kategori: 'SIMRS', masalah: 'SIMRS loading sangat lama saat membuka halaman tertentu.' },
-    { kategori: 'SIMRS', masalah: 'Barcode pasien tidak terbaca di sistem SIMRS.' },
-    { kategori: 'SIMRS', masalah: 'Jadwal dokter / antrian tidak muncul di modul pendaftaran.' },
+    // Jaringan → Software
+    { kategori: 'Software', masalah: 'Tidak bisa terhubung ke internet sama sekali.' },
+    { kategori: 'Software', masalah: 'Koneksi internet sangat lambat (speedtest jauh di bawah normal).' },
+    { kategori: 'Software', masalah: 'Koneksi WiFi sering putus-putus / disconnect sendiri.' },
+    { kategori: 'Software', masalah: 'Kabel LAN sudah terpasang tapi tidak terdeteksi (limited / no connectivity).' },
+    { kategori: 'Software', masalah: 'Tidak bisa mengakses server internal / shared folder.' },
+    { kategori: 'Software', masalah: 'Tidak bisa mengakses SIMRS melalui jaringan lokal.' },
+    { kategori: 'Software', masalah: 'IP address konflik dengan perangkat lain di jaringan.' },
+    { kategori: 'Software', masalah: 'Port switch / panel jaringan di ruangan tidak berfungsi.' },
+    { kategori: 'Software', masalah: 'Tidak bisa terhubung ke WiFi rumah sakit.' },
+    { kategori: 'Software', masalah: 'Akses ke website / aplikasi tertentu diblokir / tidak bisa dibuka.' },
+    { kategori: 'Software', masalah: 'VPN tidak bisa tersambung atau sering terputus.' },
+    { kategori: 'Software', masalah: 'Printer jaringan (network printer) tidak terdeteksi oleh komputer.' },
+    // SIMRS → Software
+    { kategori: 'Software', masalah: 'Tidak bisa login ke aplikasi SIMRS (akun / password ditolak).' },
+    { kategori: 'Software', masalah: 'Akun SIMRS terkunci setelah beberapa kali salah password.' },
+    { kategori: 'Software', masalah: 'Data pasien / transaksi tidak tersimpan setelah klik Simpan.' },
+    { kategori: 'Software', masalah: 'Aplikasi SIMRS error / crash / keluar sendiri saat digunakan.' },
+    { kategori: 'Software', masalah: 'Laporan / rekap tidak bisa dicetak dari SIMRS.' },
+    { kategori: 'Software', masalah: 'Tampilan SIMRS berantakan / tidak tampil dengan benar di browser.' },
+    { kategori: 'Software', masalah: 'Fitur atau menu tertentu di SIMRS tidak muncul / tidak bisa diklik.' },
+    { kategori: 'Software', masalah: 'Data pasien tidak ditemukan meskipun nomor rekam medis benar.' },
+    { kategori: 'Software', masalah: 'Resep / tagihan tidak bisa diproses di modul farmasi / kasir.' },
+    { kategori: 'Software', masalah: 'SIMRS loading sangat lama saat membuka halaman tertentu.' },
+    { kategori: 'Software', masalah: 'Barcode pasien tidak terbaca di sistem SIMRS.' },
+    { kategori: 'Software', masalah: 'Jadwal dokter / antrian tidak muncul di modul pendaftaran.' },
 ];
 
 function buildCombinedTemplates() {
@@ -500,7 +500,7 @@ const tplTable  = document.getElementById('tplTable');
 const modalEl   = document.getElementById('templateModal');
 const tplModal  = modalEl ? new bootstrap.Modal(modalEl) : null;
 
-const badgeMap = { Hardware: 'primary', Jaringan: 'success', SIMRS: 'warning text-dark' };
+const badgeMap = { Hardware: 'primary', Software: 'purple' };
 
 function pilihTemplate(masalah, kategori) {
     deskripsiTextarea.value = masalah;
