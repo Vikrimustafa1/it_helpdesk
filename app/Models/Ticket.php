@@ -245,6 +245,7 @@ class Ticket extends Model
     {
         $map = [
             'Hardware' => 'bi-pc-display',
+            'Software' => 'bi-window',
             'Jaringan' => 'bi-router',
             'SIMRS'    => 'bi-hospital',
         ];
