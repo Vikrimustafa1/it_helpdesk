@@ -243,16 +243,18 @@ class Ticket extends Model
      */
     public function kategoriIcon(): string
     {
-        $map = [
-            'Hardware' => 'bi-pc-display',
-            'Software' => 'bi-window',
-            'Jaringan' => 'bi-router',
-            'SIMRS'    => 'bi-hospital',
+        $colors = [
+            'Hardware' => ['bg' => '#eff6ff', 'text' => '#2563eb', 'border' => '#bfdbfe'],
+            'Software' => ['bg' => '#f5f3ff', 'text' => '#7c3aed', 'border' => '#ddd6fe'],
+            'Jaringan' => ['bg' => '#f0fdf4', 'text' => '#16a34a', 'border' => '#bbf7d0'],
+            'SIMRS'    => ['bg' => '#fef2f2', 'text' => '#dc2626', 'border' => '#fecaca'],
         ];
 
-        $icon = $map[$this->kategori] ?? 'bi-question-circle';
+        $c = $colors[$this->kategori] ?? ['bg' => '#f8fafc', 'text' => '#64748b', 'border' => '#e2e8f0'];
 
-        return '<i class="bi ' . $icon . ' me-1"></i>' . e($this->kategori);
+        return '<span style="display:inline-block;padding:.25rem .75rem;border-radius:9999px;font-size:.8rem;font-weight:600;background:' . $c['bg'] . ';color:' . $c['text'] . ';border:1px solid ' . $c['border'] . ';">'
+            . e($this->kategori ?? '-')
+            . '</span>';
     }
 
     /**
