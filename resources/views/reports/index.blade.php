@@ -30,19 +30,12 @@
                 </div>
                 <div class="col-md-2">
                     <label for="kategori" class="form-label">Kategori</label>
-                    @if($allowedKategori)
-                        {{-- Teknisi terkunci ke kategori mereka --}}
-                        <input type="hidden" name="kategori" value="{{ $allowedKategori }}">
-                        <input type="text" class="form-control" value="{{ $allowedKategori }}" readonly
-                               style="background:#f8f9fa; font-weight:600;">
-                    @else
-                        <select name="kategori" id="kategori" class="form-select">
-                            <option value="">Semua</option>
-                            @foreach(['Hardware', 'Software'] as $kat)
-                                <option value="{{ $kat }}" {{ ($filters['kategori'] ?? '') === $kat ? 'selected' : '' }}>{{ $kat }}</option>
-                            @endforeach
-                        </select>
-                    @endif
+                    <select name="kategori" id="kategori" class="form-select">
+                        <option value="">Semua</option>
+                        @foreach(['Hardware', 'Software'] as $kat)
+                            <option value="{{ $kat }}" {{ ($filters['kategori'] ?? '') === $kat ? 'selected' : '' }}>{{ $kat }}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <div class="col-md-2">
                     <label for="handler_id" class="form-label">Teknisi</label>

@@ -30,7 +30,7 @@ class ReportController extends Controller
             'dari'       => $request->query('dari'),
             'sampai'     => $request->query('sampai'),
             'status'     => $request->query('status'),
-            'kategori'   => $allowedKategori ?? $request->query('kategori'),
+            'kategori'   => $request->query('kategori'),
             'handler_id' => $request->query('handler_id'),
         ];
 
@@ -83,7 +83,7 @@ class ReportController extends Controller
             'dari'       => $request->input('dari'),
             'sampai'     => $request->input('sampai'),
             'status'     => $request->input('status'),
-            'kategori'   => $allowedKategori ?? $request->input('kategori'),
+            'kategori'   => $request->input('kategori'),
             'handler_id' => $request->input('handler_id'),
         ];
 
@@ -135,7 +135,7 @@ class ReportController extends Controller
             'dari'       => $request->input('dari'),
             'sampai'     => $request->input('sampai'),
             'status'     => $request->input('status'),
-            'kategori'   => $allowedKategori ?? $request->input('kategori'),
+            'kategori'   => $request->input('kategori'),
             'handler_id' => $request->input('handler_id'),
         ];
 
